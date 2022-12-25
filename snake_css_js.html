@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* Style the game grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(20, 20px);
+      grid-template-rows: repeat(20, 20px);
+      width: 400px;
+      height: 400px;
+      margin: 0 auto;
+      border: 1px solid black;
+    }
+
+    /* Style the snake cells */
+    .snake {
+      background-color: lightgreen;
+    }
+
+    /* Style the food cell */
+    .food {
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <!-- Create a container for the game grid -->
+  <div class="grid" id="game"></div>
+
+  <script>
+    // Get the game grid element
+    const grid = document.getElementById("game");
+
+    // Set up the snake
+    let snake = [{x: 9, y: 9}, {x: 8, y: 9}, {x: 7, y: 9}, {x: 6, y: 9}, {x: 5, y: 9}];
+    // Set up the food
+    let food = {x: 14, y: 14};
+    // Set up the score
+    let score = 0;
+    // Set up the direction of the snake
+    let dx = 1;
+    let dy = 0;
+    // Set up the speed of the snake
+    let speed = 100;
+
+    // Set up the game loop
+    function gameLoop() {
+      setTimeout(gameLoop, speed);
+
+      // Move the snake in the current direction
+      const head = {x: snake[0].x + dx, y: snake[0].y + dy};
+      snake.unshift(head);
+
+      // Check if the snake has collided with the walls or itself
+      const wallCollision = head.x < 0 || head.x > 19 || head.y < 0 || head.y > 19;
+      const snakeCollision = snake.slice(1).some(segment => segment.x === head.x && segment.y === head.y);
+      if (wallCollision || snakeCollision) {
+        // Game over!
+        return;
+      }
+
+      // Check if the snake has eaten the food
+      if (head.x === food.x && head.y === food.y) {
+        // Increase the score
+        score++;
+        // Generate a new piece of food
+        food = {x: Math.floor(Math.random() * 20), y: Math.floor(Math.random() * 20)};
+      } else {
+        // Remove the last segment of the snake
+        snake.pop();
+      }
+
+      // Clear the game grid
+      while (grid.firstChild) {
+        grid.removeChild(grid.firstChild);
+      }
+
+      // Draw the snake and the food on the game grid
+snake.forEach(segment => {
+  const cell = document.createElement("div");
+  cell.classList.add("snake");
+  cell.style.gridRowStart = segment.y + 1;
+  cell.style.gridColumnStart = segment.x + 1;
+  grid.appendChild(cell);
+});
+
+const foodCell = document.createElement("div");
+foodCell.classList.add("food");
+foodCell.style.gridRowStart = food.y + 1;
+foodCell.style.gridColumnStart = food.x + 1;
+grid.appendChild(foodCell);
+}
+
+// Set up keyboard controls
+document.addEventListener("keydown", function(e) {
+  // Change the direction of the snake based on the arrow key that was pressed
+  if (e.keyCode === 37 && dx === 0) {
+    dx = -1;
+    dy = 0;
+  } else if (e.keyCode === 38 && dy === 0) {
+    dx = 0;
+    dy = -1;
+  } else if (e.keyCode === 39 && dx === 0) {
+    dx = 1;
+    dy = 0;
+  } else if (e.keyCode === 40 && dy === 0) {
+    dx = 0;
+    dy = 1;
+  }
+});
+
+// Start the game loop
+gameLoop();
+</script>
+</body>
+</html>
