@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Documento HTML5 Avançado</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body id="documento" class="documento">
+
+<header id="cabecalho" class="cabecalho">
+    <h1 id="titulo-principal" class="titulo-principal">Título do Documento Avançado</h1>
+    <p id="subtitulo" class="subtitulo">Explorando as possibilidades do HTML5 para documentos textuais.</p>
+    <address id="contato" class="contato">
+        Autor: <a id="email" class="email" href="mailto:elenderg@gmail.com">elenderg@gmail.com</a>
+    </address>
+</header>
+
+<nav id="indice" class="indice">
+    <ul id="lista-indice" class="lista-indice">
+        <li id="item-indice-1" class="item-indice"><a href="#secao1" class="link-indice">Seção 1</a></li>
+        <li id="item-indice-2" class="item-indice"><a href="#secao2" class="link-indice">Seção 2</a></li>
+        <li id="item-indice-3" class="item-indice"><a href="#secao3" class="link-indice">Seção 3</a></li>
+    </ul>
+</nav>
+
+<main id="conteudo-principal" class="conteudo-principal">
+
+    <!-- Seção 1: Introdução -->
+    <section id="secao1" class="secao">
+        <header id="secao1-cabecalho" class="secao-cabecalho">
+            <h2 id="secao1-titulo" class="secao-titulo">Seção 1: Introdução</h2>
+        </header>
+
+        <article id="artigo1" class="artigo">
+            <h3 id="artigo1-titulo" class="artigo-titulo">Artigo 1.1: Contexto</h3>
+            <p id="artigo1-paragrafo" class="artigo-paragrafo">
+                Este parágrafo mostra um <strong id="negrito1" class="negrito">texto em negrito</strong> e um 
+                <em id="italico1" class="italico">texto em itálico</em>, incluindo também uma abreviação
+                <abbr id="html5-abbr" class="abreviacao" title="Hypertext Markup Language 5">HTML5</abbr> .
+            </p>
+            <blockquote id="citação1" class="citacao">
+                "Exemplo de citação longa de uma fonte externa para demonstrar a tag &lt;blockquote&gt;."
+                <cite id="fonte1" class="fonte">— Autor Desconhecido</cite>
+            </blockquote>
+
+            <p id="texto-direita" class="texto-direita">
+                <bdo dir="rtl" id="bdo1" class="bdo">Este texto é exibido da direita para a esquerda.</bdo>
+            </p>
+
+            <figure id="figura1" class="figura">
+                <img id="figura1-img" class="figura-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/800px-Google_2015_logo.svg.png" alt="Imagem de exemplo">
+                <figcaption id="figura1-legenda" class="figura-legenda">Figura 1: Exemplo ilustrativo.</figcaption>
+            </figure>
+
+        </article>
+    </section>
+
+    <!-- Seção 2: Desenvolvimento -->
+    <section id="secao2" class="secao">
+        <header id="secao2-cabecalho" class="secao-cabecalho">
+            <h2 id="secao2-titulo" class="secao-titulo">Seção 2: Desenvolvimento</h2>
+        </header>
+
+        <article id="artigo2" class="artigo">
+            <h3 id="artigo2-titulo" class="artigo-titulo">Artigo 2.1: Estruturas de Texto</h3>
+
+            <p id="pre1" class="pre-formatado"><pre>Texto pré-formatado
+Mantendo quebras
+    e espaçamento original</pre></p>
+
+            <p id="código1" class="codigo"><code>&lt;div&gt;Exemplo de código&lt;/div&gt;</code></p>
+
+            <dl id="dl1" class="lista-definicao">
+                <dt id="dt1" class="termo-definicao">HTML5</dt>
+                <dd id="dd1" class="definicao">Linguagem de marcação utilizada para estruturar páginas web.</dd>
+                <dt id="dt2" class="termo-definicao">CSS</dt>
+                <dd id="dd2" class="definicao">Folhas de estilo em cascata para estilização de documentos HTML.</dd>
+            </dl>
+
+            <p id="marcado1" class="marcado"><mark>Texto destacado com &lt;mark&gt;</mark></p>
+
+            <p id="subsup1" class="subsup">
+			Texto demonstrando sobreescrito e subscrito:
+                H<sub id="sub1" class="sub">2</sub>O é água. E=mc<sup id="sup1" class="sup">2</sup>
+            </p>
+			<p>
+			<ruby>
+				 漢字 <rp>(</rp><rt>かんじ</rt><rp>)</rp>
+			</ruby>
+			</p>
+        </article>
+    </section>
+
+    <!-- Seção 3: Tabelas e Referências -->
+    <section id="secao3" class="secao">
+        <header id="secao3-cabecalho" class="secao-cabecalho">
+            <h2 id="secao3-titulo" class="secao-titulo">Seção 3: Tabelas e Referências</h2>
+        </header>
+
+        <article id="artigo3" class="artigo">
+            <h3 id="artigo3-titulo" class="artigo-titulo">Artigo 3.1: Tabela de Exemplo</h3>
+
+            <table id="tabela1" class="tabela">
+                <caption id="tabela1-caption" class="tabela-caption">Tabela 1: Valores de exemplo</caption>
+                <thead id="tabela1-head" class="tabela-head">
+                    <tr id="tabela1-trh" class="tabela-tr">
+                        <th id="tabela1-th1" class="tabela-th">Nome</th>
+                        <th id="tabela1-th2" class="tabela-th">Valor</th>
+                    </tr>
+                </thead>
+                <tbody id="tabela1-body" class="tabela-body">
+                    <tr id="tabela1-tr1" class="tabela-tr">
+                        <td id="tabela1-td1" class="tabela-td">Item A</td>
+                        <td id="tabela1-td2" class="tabela-td">10</td>
+                    </tr>
+                    <tr id="tabela1-tr2" class="tabela-tr">
+                        <td id="tabela1-td3" class="tabela-td">Item B</td>
+                        <td id="tabela1-td4" class="tabela-td">20</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <aside id="aside1" class="aside">
+                Nota: Esta tabela é apenas ilustrativa, mostrando o uso de <code>&lt;table&gt;</code> e <code>&lt;caption&gt;</code>.
+            </aside>
+        </article>
+    </section>
+
+</main>
+
+<footer id="rodape" class="rodape">
+    <p id="rodape-texto" class="rodape-texto">© 2025 Documento HTML5 Avançado</p>
+</footer>
+
+</body>
+</html>

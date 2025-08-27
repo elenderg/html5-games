@@ -1,0 +1,83 @@
+/* Fonte padrão e cores neutras */
+body.documento {
+    font-family:"Times New Roman", serif;
+    line-height:1.6;
+    color:#222;
+    background-color:#fff;
+    padding:2em;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* Cabeçalho */
+header.cabecalho { text-align:center; margin-bottom:2em; }
+h1.titulo-principal { font-size:2.5em; }
+p.subtitulo { font-size:1.2em; color:#555; }
+address.contato { font-style:normal; font-size:0.9em; }
+ruby{ font-size:1.9em; color:#555; }
+rt {
+  line-height: normal;
+}
+/* Índice */
+nav.indice { margin-bottom:2em; }
+ul.lista-indice { list-style:none; display:flex; gap:1em; flex-wrap:wrap; justify-content:center; }
+ul.lista-indice li.item-indice a.link-indice { text-decoration:none; color:#0077cc; }
+ul.lista-indice li.item-indice a.link-indice:hover { text-decoration:underline; }
+
+/* Seções e artigos */
+section.secao { margin-bottom:3em; }
+section.secao header.secao-cabecalho h2.secao-titulo { font-size:2em; margin-bottom:0.5em; }
+article.artigo { margin-bottom:2em; }
+h3.artigo-titulo { font-size:1.5em; margin-bottom:0.5em; }
+p.artigo-paragrafo, p.pre-formatado, p.codigo, p.marcado, p.subsup, p.texto-direita { text-align:justify; font-size:1em; margin-bottom:1em; }
+pre { background:#f5f5f5; padding:1em; overflow:auto; }
+code { background:#eee; padding:0.2em 0.4em; font-family:monospace; }
+blockquote.citacao { border-left:4px solid #ccc; padding-left:1em; margin:1em 0; color:#555; font-style:italic; }
+cite.fonte { display:block; text-align:right; font-size:0.9em; color:#444; }
+bdo.bdo { display:block; background:#f0f0f0; padding:0.5em; }
+
+/* Figuras */
+figure.figura { margin:1em 0; text-align:center; }
+img.figura-img { max-width:100%; height:auto; }
+figcaption.figura-legenda { font-size:0.9em; color:#666; }
+
+/* Tabelas */
+table.tabela { width:100%; border-collapse:collapse; margin-bottom:1em; }
+th.tabela-th, td.tabela-td { border:1px solid #ccc; padding:0.5em; text-align:left; }
+caption.tabela-caption { font-weight:bold; margin-bottom:0.5em; }
+
+/* Aside */
+aside.aside { font-size:0.9em; color:#555; background:#f9f9f9; padding:0.5em; border-left:3px solid #ccc; margin-top:1em; }
+
+/* Rodapé */
+footer.rodape { text-align:center; padding:1em 0; border-top:1px solid #ccc; margin-top:2em; }
+
+/* Media Queries - Responsividade */
+@media (min-width:1200px){
+    body.documento { padding:3em; }
+    h1.titulo-principal { font-size:3em; }
+    h2.secao-titulo { font-size:2.2em; }
+    h3.artigo-titulo { font-size:1.8em; }
+}
+@media (min-width:768px) and (max-width:1199px){
+    body.documento { padding:2em; }
+    h1.titulo-principal { font-size:2.2em; }
+    h2.secao-titulo { font-size:1.8em; }
+    h3.artigo-titulo { font-size:1.4em; }
+}
+@media (max-width:767px){
+    body.documento { padding:1em; }
+    h1.titulo-principal { font-size:1.8em; }
+    h2.secao-titulo { font-size:1.3em; }
+    h3.artigo-titulo { font-size:1.1em; }
+    ul.lista-indice { flex-direction:column; align-items:center; }
+    p.artigo-paragrafo, p.pre-formatado, p.codigo, p.marcado, p.subsup, p.texto-direita { font-size:0.95em; }
+    figcaption.figura-legenda { font-size:0.85em; }
+}
+rt {
+    font-size: 0.6em;        /* tamanho do texto ruby */
+    line-height: 2;          /* aumenta o espaçamento vertical */
+    vertical-align: middle;  /* ajusta o alinhamento vertical */
+	margin-bottom: 1.5em; /* espaço entre ruby e texto base */
+    display: block;       /* necessário para que o margin funcione */
+}
